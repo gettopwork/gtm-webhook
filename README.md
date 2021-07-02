@@ -1,5 +1,5 @@
 # GTM Webhook Template
-This is a **unofficial** Google Tag Manager Tag Template for sending data via Custom App Webhook
+This is a **unofficial** Google Tag Manager Tag Template for sending data via a Webhook
 
 ## How to setup a GTM Webhook
 
