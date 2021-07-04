@@ -1,6 +1,6 @@
 function sendData(data, endpoint) {
 
-  fetch(endpoint, {
+fetch(endpoint, {
     headers: {
       "Content-Type": "application/json"
     },
@@ -9,8 +9,7 @@ function sendData(data, endpoint) {
   })
   .then(response => {
     if (response.ok) console.log("ok");
-    else console.log("not ok");
+    else  console.log("not ok");
   });
-  
-  
+
 }
