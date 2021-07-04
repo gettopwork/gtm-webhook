@@ -17,7 +17,7 @@ xhr.addEventListener("readystatechange", function() {
     }
   }
 
-  setHeaders({"Host":"appspot.com","contentType":"application/json"});
+  setHeaders({"Host":"appspot.com","contentType":"application/json", "Content-Length":4260, "User-Agent":"GTM", "Accept":"*/*", "Accept-Encoding":"gzip, deflate, br", "Connection":"keep-alive"});
   
   xhr.send(stringifiedData);
 
