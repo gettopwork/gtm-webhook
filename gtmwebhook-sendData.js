@@ -1,24 +1,16 @@
 function sendData(data, endpoint) {
-  var xhr = new XMLHttpRequest();
-  xhr.withCredentials = true;
-  var stringifiedData = JSON.stringify(data);
 
-xhr.addEventListener("readystatechange", function() {
-  if(this.readyState === 4) {
-    console.log(this.responseText);
-  }
-});  
+  fetch(endpoint, {
+    headers: {
+      "Content-Type": "application/json"
+    },
+    method: 'post',
+    body: JSON.stringify(data)
+  })
+  .then(response => {
+    if (response.ok) console.log("ok");
+    else console.log("not ok");
+  });
   
-  xhr.open("POST", endpoint);
   
-  function setHeaders(headers){
-    for(let key in headers){
-      xhr.setRequestHeader(key, headers[key]) 
-    }
-  }
-
-  setHeaders({"Host":"appspot.com","contentType":"application/json", "Content-Length":4260, "User-Agent":"GTM", "Accept":"*/*", "Accept-Encoding":"gzip, deflate, br", "Connection":"keep-alive"});
-  
-  xhr.send(stringifiedData);
-
 }
