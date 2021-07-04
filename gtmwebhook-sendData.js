@@ -10,7 +10,15 @@ xhr.addEventListener("readystatechange", function() {
 });  
   
   xhr.open("POST", endpoint);
-  xhr.setRequestHeader("Content-Type", "application/json");
+  
+  function setHeaders(headers){
+    for(let key in headers){
+      xhr.setRequestHeader(key, headers[key]) 
+    }
+  }
+
+  setHeaders({"Host":"appspot.com","contentType":"application/json"});
+  
   xhr.send(stringifiedData);
 
 }
